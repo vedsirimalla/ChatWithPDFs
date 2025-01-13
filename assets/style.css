@@ -1,0 +1,117 @@
+/* Background with AI chat overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(17, 34, 64, 0.95)),
+                url('https://images.unsplash.com/photo-1531746790731-6bf805de23f0?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.stApp {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.2);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+/* Futuristic header with glow effect */
+.stHeader {
+    background: rgba(17, 34, 64, 0.9);
+    color: #64ffda;
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border: 2px solid #64ffda;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    margin-bottom: 2rem;
+}
+
+/* AI-themed chat messages */
+.stChatMessage {
+    background: rgba(17, 34, 64, 0.7);
+    border-left: 4px solid #64ffda;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    border-radius: 0 15px 15px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stChatMessage[data-testid="user-message"] {
+    border-left-color: #64ffda;
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.stChatMessage[data-testid="assistant-message"] {
+    border-left-color: #ff64b4;
+    background: rgba(255, 100, 180, 0.1);
+}
+
+/* Glowing input field */
+.stTextInput > div > div > input {
+    background: rgba(17, 34, 64, 0.3);
+    border: 2px solid #64ffda;
+    border-radius: 12px;
+    color: #64ffda;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Animated upload button */
+.stButton > button {
+    background: linear-gradient(45deg, #64ffda, #64b4ff);
+    color: #0a192f;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.8rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(17, 34, 64, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #64ffda, #64b4ff);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #64b4ff, #64ffda);
+}
